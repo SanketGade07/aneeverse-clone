@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  
+  font-family: "Poppins", system-ui, sans-serif;
+}
+/* @layer components {
+  .page-container {
+    @apply mx-auto max-w-7xl px-6 lg:px-20;
+  }
+} */
+@layer components {
+  .site-container {
+    @apply max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+.bg-navbar-gradient {
+  background: linear-gradient(
+    to bottom,
+    rgba(13, 42, 51, 1) 0%,
+    rgba(11, 38, 46, 0.98) 15%,
+    rgba(10, 35, 43, 0.95) 30%,
+    rgba(9, 32, 40, 0.88) 45%,
+    rgba(8, 30, 38, 0.75) 55%,
+    rgba(7, 28, 36, 0.55) 65%,
+    rgba(6, 26, 34, 0.35) 75%,
+    rgba(5, 24, 32, 0.18) 85%,
+    rgba(4, 22, 30, 0.05) 92%,
+    rgba(3, 20, 28, 0) 100%
+  );
+}
+
+
