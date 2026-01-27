@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: "Bw Gradual";
+    src: url("https://db.onlinewebfonts.com/t/0a282436f9872199b5edbc9886a11706.eot");
+    src: url("https://db.onlinewebfonts.com/t/0a282436f9872199b5edbc9886a11706.eot?#iefix") format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/0a282436f9872199b5edbc9886a11706.woff2") format("woff2"),
+    url("https://db.onlinewebfonts.com/t/0a282436f9872199b5edbc9886a11706.woff") format("woff"),
+    url("https://db.onlinewebfonts.com/t/0a282436f9872199b5edbc9886a11706.ttf") format("truetype"),
+    url("https://db.onlinewebfonts.com/t/0a282436f9872199b5edbc9886a11706.svg#Bw Gradual") format("svg");
+}
+
 body {
   
   font-family: "Poppins", system-ui, sans-serif;
@@ -40,8 +50,17 @@ body {
   to { transform: translateX(0); }
 }
 
+@keyframes infinite-scroll-reverse {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
 .animate-infinite-scroll {
   animation: infinite-scroll 50s linear infinite;
+}
+
+.animate-infinite-scroll-reverse {
+  animation: infinite-scroll-reverse 160s linear infinite;
 }
 
 .bg-dark-accent {
