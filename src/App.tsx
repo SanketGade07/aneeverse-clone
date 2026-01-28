@@ -9,6 +9,7 @@ import Testimonials from "./components/Testimonials";
 
 import Blog from "./components/Blog";
 import Booking from "./components/Booking";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Testimonials />
       <Blog />
       <Booking />
+      <Footer />
     </div>
   );
 }
