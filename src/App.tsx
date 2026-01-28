@@ -5,6 +5,7 @@ import WhatWeCreate from "./components/WhatWeCreate";
 import CommandCenter from "./components/CommandCenter";
 import HiringSection from "./components/HiringSection";
 import OurWorks from "./components/OurWorks";
+import Testimonials from "./components/Testimonials";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <CommandCenter />
       <HiringSection />
       <OurWorks />
+      <Testimonials />
     </div>
   );
 }

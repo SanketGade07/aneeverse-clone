@@ -7,7 +7,7 @@ export default function Navbar() {
       {/* NAVBAR CONTENT */}
       <div className="relative site-container h-20 flex items-center justify-between text-[#EBFAFE]">
         {/* LOGO */}
-        <div className="text-2xl font-semibold tracking-tight">aneeverse</div>
+        <div className="text-[32px] font-bold tracking-[-0.06em] leading-none">aneeverse</div>
 
         {/* NAV LINKS */}
         <nav className="hidden md:flex items-center gap-8 text-base font-medium tracking-tight">
@@ -32,12 +32,12 @@ export default function Navbar() {
         </nav>
 
         {/* CTA BUTTONS */}
-        <div className="flex items-center gap-3">
-          <button className="px-5 py-2 rounded-full bg-white text-black text-sm font-medium hover:bg-white/90 transition">
+        <div className="flex items-center gap-4">
+          <button className="px-7 py-2.5 rounded-full bg-[#EBFAFE] text-[#073742] text-[15px] font-bold hover:bg-white transition shadow-sm">
             Book a Call
           </button>
-
-          <button className="px-5 py-2 rounded-full border border-white/40 text-sm hover:border-white/70 transition">
+          
+          <button className="px-7 py-2.5 rounded-full border border-[#EBFAFE]/30 text-[#EBFAFE] text-[15px] font-semibold hover:bg-[#EBFAFE]/10 transition">
             Login
           </button>
         </div>
