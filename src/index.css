@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: "Bw Gradual";
+    font-family: "BwGradual";
     src: url("https://db.onlinewebfonts.com/t/0a282436f9872199b5edbc9886a11706.eot");
     src: url("https://db.onlinewebfonts.com/t/0a282436f9872199b5edbc9886a11706.eot?#iefix") format("embedded-opentype"),
     url("https://db.onlinewebfonts.com/t/0a282436f9872199b5edbc9886a11706.woff2") format("woff2"),
@@ -65,4 +65,22 @@ body {
 
 .bg-dark-accent {
   background-color: #031418;
+}
+
+/* Hide Cal.com branding and skeleton placeholders */
+[class*="mb-6"][class*="mt-auto"][class*="pt-6"],
+[class*="p-2"][class*="text-center"][class*="text-xs"][class*="max-w-3xl"],
+div.p-2.text-center.text-xs.max-w-3xl,
+span.mb-6.mt-auto.pt-6,
+div[class*="text-center"][class*="text-xs"] a[href*="cal.com"],
+div[class*="text-center"][class*="text-xs"] img[alt*="Cal.com"],
+.cal-element-embed-dark span.block.mb-6.mt-auto,
+#skeleton-container,
+[id*="skeleton-container"],
+.skeleton-container {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
 }

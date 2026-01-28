@@ -9,12 +9,11 @@ export default function Hero() {
           {/* DESIGN / OPTIMIZE / ADVERTISE */}
           <h2
             className="
-              font-inter
+              font-bw-gradual
               text-[42px]
-              font-normal
+              font-bold
               tracking-[0.02em]
               leading-[1.2]
-              
               text-[#EBFAFE]
               whitespace-nowrap
             "

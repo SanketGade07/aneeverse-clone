@@ -36,7 +36,7 @@ export default function Navbar() {
         }`}
       >
         {/* LOGO */}
-        <div className="text-[32px] font-bold tracking-[-0.06em] leading-none transition-colors duration-300">
+        <div className="text-[32px] font-bw-gradual font-extrabold tracking-[-0.06em] leading-none transition-colors duration-300">
           aneeverse
         </div>
 

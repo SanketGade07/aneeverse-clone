@@ -8,6 +8,7 @@ import OurWorks from "./components/OurWorks";
 import Testimonials from "./components/Testimonials";
 
 import Blog from "./components/Blog";
+import Booking from "./components/Booking";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <OurWorks />
       <Testimonials />
       <Blog />
+      <Booking />
     </div>
   );
 }

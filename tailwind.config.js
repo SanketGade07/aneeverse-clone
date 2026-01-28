@@ -7,7 +7,7 @@ export default {
         inter: ["Inter", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
         accent: ["Rock Salt", "cursive"],
-        "bw-gradual": ["Bw Gradual", "sans-serif"],
+        "bw-gradual": ["BwGradual", "sans-serif"],
       },
     },
   },
