@@ -7,6 +7,8 @@ import HiringSection from "./components/HiringSection";
 import OurWorks from "./components/OurWorks";
 import Testimonials from "./components/Testimonials";
 
+import Blog from "./components/Blog";
+
 function App() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#073742] to-[#062d33]">
@@ -18,6 +20,7 @@ function App() {
       <HiringSection />
       <OurWorks />
       <Testimonials />
+      <Blog />
     </div>
   );
 }
