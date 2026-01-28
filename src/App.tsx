@@ -4,6 +4,7 @@ import TrustedBy from "./components/TrustedBy";
 import WhatWeCreate from "./components/WhatWeCreate";
 import CommandCenter from "./components/CommandCenter";
 import HiringSection from "./components/HiringSection";
+import OurWorks from "./components/OurWorks";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <WhatWeCreate />
       <CommandCenter />
       <HiringSection />
+      <OurWorks />
     </div>
   );
 }
