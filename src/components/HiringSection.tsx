@@ -90,7 +90,7 @@ const HiringSection = () => {
             {comparisonData.map((row) => (
               <div 
                 key={row.type} 
-                className={`${row.highlight ? 'bg-[#8dd7e8] text-[#073742]' : 'text-white border-b border-white/5'} flex items-stretch transition-colors duration-300 min-h-[156px]`}
+                className={`${row.highlight ? 'bg-[#8dd7e8] text-[#073742]' : 'bg-[#07242e] text-white border-b border-white/5'} flex items-stretch transition-colors duration-300 min-h-[156px]`}
               >
                 {/* Information Column */}
                 <div className={`w-[35%] p-3 sm:p-8 flex items-center gap-2 sm:gap-6 border-r ${row.highlight ? 'border-[#073742]/10' : 'border-white/10'}`}>
