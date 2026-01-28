@@ -60,13 +60,13 @@ const Blog = () => {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
-              <div className="p-8 flex flex-col flex-grow">
+              <div className="flex flex-col h-[40%] p-6 pb-7">
                 <div className="mb-4">
                   <span className={`inline-block px-4 py-1.5 rounded-full ${post.tagColor} text-white text-[10px] font-bold tracking-widest uppercase`}>
                     {post.category}
                   </span>
                 </div>
-                <h3 className="text-[#b0d8de] text-xl md:text-2xl font-bold leading-[1.3]">
+                <h3 className="text-white text-base md:text-lg font-semibold leading-snug line-clamp-3">
                   {post.title}
                 </h3>
               </div>
