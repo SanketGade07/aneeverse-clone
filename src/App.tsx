@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import TrustedBy from "./components/TrustedBy";
 import WhatWeCreate from "./components/WhatWeCreate";
+import CommandCenter from "./components/CommandCenter";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Hero />
       <TrustedBy />
       <WhatWeCreate />
+      <CommandCenter />
     </div>
   );
 }
