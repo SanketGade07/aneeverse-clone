@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import TrustedBy from "./components/TrustedBy";
 import WhatWeCreate from "./components/WhatWeCreate";
 import CommandCenter from "./components/CommandCenter";
+import HiringSection from "./components/HiringSection";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <TrustedBy />
       <WhatWeCreate />
       <CommandCenter />
+      <HiringSection />
     </div>
   );
 }
