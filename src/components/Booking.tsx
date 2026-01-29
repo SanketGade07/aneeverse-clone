@@ -87,8 +87,8 @@ const Booking = () => {
             className="max-w-[1300px] mx-auto rounded-[2rem] shadow-2xl border border-[rgba(45,200,230,.1)] overflow-hidden pt-0 md:pt-24"
             style={{ background: 'linear-gradient(135deg, #072d36 0%, #073742 100%)' }}
           >
-            {/* Desktop: Use absolute positioning to crop footer. Mobile: Large height to allow internal 'growth' of slots. */}
-            <div className="relative h-[800px] md:h-[580px]">
+            {/* Desktop: Use absolute positioning to crop footer. Mobile: Relative and tight height to avoid empty space. */}
+            <div className="relative h-[560px] md:h-[580px]">
               <div className="w-full h-full md:absolute md:top-0 md:left-0 md:h-[750px]">
                 <Cal
                   namespace="secret"
