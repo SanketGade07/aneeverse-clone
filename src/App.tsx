@@ -17,12 +17,19 @@ function App() {
       <Navbar />
       <Hero />
       <TrustedBy />
+      <div className="lg:hidden border-t border-white/10 w-full" />
       <WhatWeCreate />
+      <div className="lg:hidden border-t border-white/10 w-full" />
       <CommandCenter />
+      <div className="lg:hidden border-t border-white/10 w-full" />
       <HiringSection />
+      <div className="lg:hidden border-t border-white/10 w-full" />
       <OurWorks />
+      <div className="lg:hidden border-t border-white/10 w-full" />
       <Testimonials />
+      <div className="lg:hidden border-t border-white/10 w-full" />
       <Blog />
+      <div className="lg:hidden border-t border-white/10 w-full" />
       <Booking />
       <Footer />
     </div>

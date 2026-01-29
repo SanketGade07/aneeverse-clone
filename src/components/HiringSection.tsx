@@ -49,27 +49,78 @@ const HiringSection = () => {
   return (
     <section className="bg-[#03151a] py-20 relative overflow-hidden">
       <div className="site-container">
-        <div className="flex flex-col items-center text-center mb-20">
-          <h3 className="text-gray-400 text-xs sm:text-sm tracking-[0.2em] uppercase font-bold mb-4">
+        {/* Mobile Header (Simplified for Screenshot Match) */}
+        <div className="flex flex-col items-center text-center mb-10 md:mb-20 px-4">
+          <h3 className="text-gray-400 text-[10px] sm:text-xs tracking-[0.2em] uppercase font-bold mb-4">
             BUILT FOR YOU
           </h3>
           
-          <h2 className="text-white font-bw-gradual font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-[72px] mb-12 tracking-tighter uppercase leading-[1.1] max-w-5xl">
+          <h2 className="text-white font-bw-gradual font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-[72px] mb-8 md:mb-12 tracking-tighter uppercase leading-[1.1] max-w-5xl">
             HIRING OR TRADITIONAL OUTSOURCING?{" "}
-            <span className="font-accent text-[#FC83E1] normal-case text-[0.55em] relative -top-3 md:-top-5 inline-block transform -rotate-3 ml-2">
+            <span className="font-accent text-[#FC83E1] normal-case text-[0.6em] relative -top-2 md:-top-5 inline-block transform -rotate-3 ml-1">
               Neither
             </span>
           </h2>
           
-          <button className="relative overflow-hidden inline-block px-10 py-4 rounded-full font-bold text-base transition-transform hover:scale-105" 
+          <button className="relative overflow-hidden inline-block px-8 py-3.5 rounded-full font-bold text-sm md:text-base transition-transform hover:scale-105" 
             style={{ backgroundColor: "rgb(136, 215, 240)", color: "rgb(7, 55, 66)" }}>
             GET STARTED
           </button>
         </div>
 
-        {/* Comparison Table */}
-        <div className="w-full overflow-x-auto">
-          <div className="min-w-[1200px] bg-[#071c22] rounded-[32px] overflow-hidden border border-white/5">
+        {/* Mobile View Table (md:hidden) */}
+        <div className="md:hidden w-full px-4 mt-4">
+          <div className="bg-[#07242e] rounded-2xl overflow-hidden border border-white/5 shadow-2xl">
+            {/* Mobile Table Header */}
+            <div className="bg-black/60 h-[36px] px-4 flex items-center border-b border-white/10">
+              <div className="w-[38%] flex justify-start">
+                <img src={aneeverseLogo} alt="Logo" className="w-4 h-4 opacity-100 brightness-125" />
+              </div>
+              <div className="flex-1 grid grid-cols-5 h-full">
+                {["SPEED", "FLEX", "QUALITY", "SCALE", "COST"].map((h) => (
+                  <div key={h} className="text-[#9CA3AF] text-[7px] font-bold tracking-tight flex items-center justify-center text-center">
+                    {h === "QUALITY" ? "QUAL" : (h === "SCALABILITY" ? "SCALE" : h)}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Mobile Rows */}
+            {comparisonData.map((row) => (
+              <div 
+                key={row.type} 
+                className={`${row.highlight ? 'bg-[#8dd7e8] text-[#073742]' : 'bg-transparent text-white border-b border-white/5 last:border-0'} flex items-center h-[44px] px-4`}
+              >
+                {/* Type Column */}
+                <div className="w-[38%] pr-2">
+                  <h4 className={`font-bold text-[10px] leading-tight truncate px-1`}>
+                    {row.type}
+                  </h4>
+                </div>
+
+                {/* Icons Grid */}
+                <div className="flex-1 grid grid-cols-5 h-full">
+                  {row.features.map((f, i) => (
+                    <div key={i} className="flex justify-center items-center">
+                      <div className="scale-[0.45]">
+                        {f ? (
+                          <div className={row.highlight ? 'text-[#073742]' : 'text-[#88D7F0]'}>
+                            <CheckIcon />
+                          </div>
+                        ) : <CrossIcon />}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+
+        {/* Desktop Comparison Table (hidden md:block) */}
+        <div className="hidden md:block w-full overflow-x-auto">
+          <div className="min-w-[1000px] lg:min-w-[1200px] bg-[#071c22] rounded-[32px] overflow-hidden border border-white/5">
             {/* Table Header */}
             <div className="bg-black py-4 sm:py-6 px-3 sm:px-10 flex items-center border-b border-gray-800">
               <div className="w-[35%] flex items-center gap-3">
@@ -123,6 +174,7 @@ const HiringSection = () => {
             ))}
           </div>
         </div>
+
       </div>
     </section>
   );
