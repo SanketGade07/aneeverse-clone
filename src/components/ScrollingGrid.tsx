@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { motion, useAnimationFrame, useMotionValue, useTransform } from "framer-motion";
 
 const topRowImages = [

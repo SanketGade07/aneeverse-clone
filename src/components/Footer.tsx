@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Instagram, Linkedin, Youtube, ArrowUpRight, ChevronDown, ChevronUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import footerBg from '../assets/footer/footer2.avif';
 
-const Footer: React.FC = () => {
+const Footer = () => {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [navigationOpen, setNavigationOpen] = useState(false);
   const footerData = {
