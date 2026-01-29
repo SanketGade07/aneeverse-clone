@@ -101,10 +101,10 @@ const MobileInfiniteRow = ({
         onPan={(_, info) => {
           baseX.set(baseX.get() + info.delta.x);
         }}
-        className="flex gap-1.5 pointer-events-auto"
+        className="flex gap-1.5 pointer-events-auto touch-pan-y"
       >
         {[...images, ...images, ...images].map((src, idx) => (
-          <div key={idx} className="flex-shrink-0 w-[150px] h-[185px] rounded-[16px] overflow-hidden shadow-lg border border-white/5 select-none touch-none">
+          <div key={idx} className="flex-shrink-0 w-[150px] h-[185px] rounded-[16px] overflow-hidden shadow-lg border border-white/5 select-none">
             <img 
               src={src} 
               className="w-full h-full object-cover pointer-events-none select-none" 
