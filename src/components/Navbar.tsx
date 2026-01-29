@@ -69,6 +69,7 @@ export default function Navbar() {
   const timeoutRef = useRef<any>(null);
   const portfolioTimeoutRef = useRef<any>(null);
   const resourcesTimeoutRef = useRef<any>(null);
+  const mobileScrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!isMenuOpen) {
@@ -77,6 +78,15 @@ export default function Navbar() {
       setIsMobileResourcesOpen(false);
     }
   }, [isMenuOpen]);
+
+  // Reset scroll position when any mobile tab is opened
+  useEffect(() => {
+    if (isMobileServicesOpen || isMobilePortfolioOpen || isMobileResourcesOpen) {
+      if (mobileScrollRef.current) {
+        mobileScrollRef.current.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    }
+  }, [isMobileServicesOpen, isMobilePortfolioOpen, isMobileResourcesOpen]);
 
   const handleServicesEnter = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -474,7 +484,10 @@ export default function Navbar() {
             </div>
 
             {/* MOBILE NAV CONTENT */}
-            <div className="flex-1 overflow-y-auto no-scrollbar pt-2">
+            <div 
+              ref={mobileScrollRef}
+              className="flex-1 overflow-y-auto no-scrollbar pt-2"
+            >
               <nav className="flex flex-col gap-8 text-[18px] font-medium text-[#073742] pb-12">
                 {/* SERVICES BLOCK */}
                 <div className="space-y-2">
