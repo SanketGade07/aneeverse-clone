@@ -73,11 +73,11 @@ export default function ScrollingGrid() {
       </div>
 
       {/* MOBILE VIEW: 2 Horizontal Rows */}
-      <div className="lg:hidden flex flex-col gap-1.5 w-full overflow-hidden">
-        {/* TOP ROW: Moving Left (Seamless Marquee) */}
-        <div className="flex overflow-hidden">
+      <div className="lg:hidden flex flex-col  w-full">
+        {/* TOP ROW: Moving Left (Seamless Marquee + Manual Scroll) */}
+        <div className="flex overflow-x-auto no-scrollbar cursor-grab active:cursor-grabbing">
           <motion.div 
-            className="flex gap-1.5"
+            className="flex gap-1.5 py-1"
             animate={{ x: ["0%", "-50%"] }}
             transition={{
               duration: 25,
@@ -94,10 +94,10 @@ export default function ScrollingGrid() {
           </motion.div>
         </div>
 
-        {/* BOTTOM ROW: Moving Right (Opposite Direction) */}
-        <div className="flex overflow-hidden">
+        {/* BOTTOM ROW: Moving Right (Opposite Direction + Manual Scroll) */}
+        <div className="flex overflow-x-auto no-scrollbar cursor-grab active:cursor-grabbing">
           <motion.div 
-            className="flex gap-1.5"
+            className="flex gap-1.5 py-1"
             animate={{ x: ["-50%", "0%"] }}
             transition={{
               duration: 25,
@@ -113,8 +113,6 @@ export default function ScrollingGrid() {
             ))}
           </motion.div>
         </div>
-
-
       </div>
 
 
