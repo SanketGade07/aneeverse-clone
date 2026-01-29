@@ -59,7 +59,7 @@ export default function Hero() {
       </div>
 
       {/* IMAGE GRID */}
-      <div className="relative lg:absolute lg:top-0 lg:right-0 w-full lg:w-[46%] h-auto lg:h-full z-0 mt-0 lg:mt-0">
+      <div className="relative lg:absolute lg:top-0 lg:right-0 w-full lg:w-[46%] h-auto lg:h-full z-10 mt-0 lg:mt-0">
         <ScrollingGrid />
       </div>
 
