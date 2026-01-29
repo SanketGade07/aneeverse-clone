@@ -73,35 +73,35 @@ const Testimonials = () => {
   const current = testimonials[activeIndex];
 
   return (
-    <section className="bg-[#073742] py-24 relative overflow-hidden min-h-[700px] flex items-center">
+    <section className="bg-[#073742] py-16 lg:py-24 relative overflow-hidden min-h-[700px] flex items-center">
       <div className="site-container w-full">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 lg:pl-12">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-10 lg:gap-16 lg:pl-12">
           
-          {/* Left Side: Avatar Navigation */}
-          <div className="flex flex-col items-center gap-2 shrink-0 relative">
-             {/* Small Top Avatar (Previous) */}
-             <div className="w-32 h-32 rounded-full border-2 border-white/10 overflow-hidden shadow-2xl bg-black opacity-30 filter grayscale brightness-50 blur-[0.5px] transition-all duration-700 transform scale-75">
+          {/* Left Side: Avatar Navigation - Horizontal on mobile, Vertical on desktop */}
+          <div className="flex flex-row lg:flex-col items-center justify-center gap-4 lg:gap-2 shrink-0 relative w-full lg:w-auto">
+             {/* Small Left/Top Avatar (Previous) */}
+             <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 rounded-full border-2 border-white/10 overflow-hidden shadow-2xl bg-black opacity-30 filter grayscale brightness-50 blur-[0.5px] transition-all duration-700 transform lg:scale-75 cursor-pointer" onClick={prevTestimonial}>
                 <img src={testimonials[(activeIndex - 1 + testimonials.length) % testimonials.length].avatar} alt="" className="w-full h-full object-cover" />
              </div>
 
              {/* Main Center Avatar */}
-             <div className="w-40 h-40 rounded-full border-2 border-white/10 overflow-hidden
+             <div className="w-28 h-28 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-full border-2 border-white/10 overflow-hidden
              shadow-2xl relative z-10 transition-all duration-700 bg-[#0b2d35]">
                 <img src={current.avatar} alt={current.author} className="w-full h-full object-cover" />
              </div>
 
-             {/* Small Bottom Avatar (Next) */}
-             <div className="w-36 h-36 rounded-full border-2 border-white/10 overflow-hidden shadow-2xl bg-black opacity-30 filter grayscale brightness-50 blur-[0.5px] transition-all duration-700 transform scale-75">
+             {/* Small Right/Bottom Avatar (Next) */}
+             <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-36 lg:h-36 rounded-full border-2 border-white/10 overflow-hidden shadow-2xl bg-black opacity-30 filter grayscale brightness-50 blur-[0.5px] transition-all duration-700 transform lg:scale-75 cursor-pointer" onClick={nextTestimonial}>
                 <img src={testimonials[(activeIndex + 1) % testimonials.length].avatar} alt="" className="w-full h-full object-cover" />
              </div>
           </div>
 
           {/* Center: Content area */}
-          <div className="flex-1 text-white text-left">
-            <div className="space-y-10">
+          <div className="flex-1 text-white text-left w-full">
+            <div className="space-y-6 lg:space-y-10">
               <div className="flex flex-col items-start gap-4">
                 {current.company === "NOVINO INKS PVT LTD" ? (
-                  <h4 className="text-2xl font-bold tracking-[0.1rem] uppercase opacity-90 font-sans text-white text-left">
+                  <h4 className="text-xl lg:text-2xl font-bold tracking-[0.1rem] uppercase opacity-90 font-sans text-white text-left">
                     {current.company}
                   </h4>
                 ) : current.logo ? (
@@ -109,7 +109,7 @@ const Testimonials = () => {
                     src={current.logo} 
                     alt={current.company} 
                     className={`w-auto object-contain opacity-100 ${
-                      current.company === "VMC" ? "h-12" : "h-32"
+                      current.company === "VMC" ? "h-10 lg:h-12" : "h-24 lg:h-32"
                     } ${current.company === "JM VISA SERVICES" ? "brightness-0 invert" : ""}`} 
                   />
                 ) : (
@@ -120,35 +120,35 @@ const Testimonials = () => {
               </div>
               
               <h2 
-                className="text-3xl sm:text-4xl lg:text-[26px] font-bw-gradual font-extrabold max-w-[900px] text-left lg:mx-0 "
-                style={{ lineHeight: "1.9rem", letterSpacing: "-0.025em", marginTop: "2rem" }}
+                className="text-[20px] sm:text-2xl lg:text-[26px] font-bw-gradual font-extrabold max-w-[900px] text-left lg:mx-0 "
+                style={{ lineHeight: "1.9rem", letterSpacing: "-0.025em" }}
               >
                 "{current.quote}"
               </h2>
 
-              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-12 pt-6">
+              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 lg:gap-12 pt-4 lg:pt-6">
                 <div className="space-y-1 group">
-                  <p className="text-2xl font-bold font-sans tracking-tight">{current.author}</p>
-                  <p className="text-[#9CA3AF] font-sans font-medium text-base">{current.role}</p>
+                  <p className="text-xl lg:text-2xl font-bold font-sans tracking-tight">{current.author}</p>
+                  <p className="text-[#9CA3AF] font-sans font-medium text-sm lg:text-base">{current.role}</p>
                 </div>
 
                 {/* Project Card */}
-                <div className="bg-[#0b313a]/60 backdrop-blur-sm p-4 rounded-[22px] border border-white/10 flex items-center gap-5 min-w-[380px] transition-all hover:border-white/20 group cursor-pointer lg:mx-0">
-                  <div className="w-[84px] h-[54px] rounded-xl overflow-hidden bg-black/40 shrink-0">
+                <div className="bg-[#0b313a]/60 backdrop-blur-sm p-3 lg:p-4 rounded-[18px] lg:rounded-[22px] border border-white/10 flex items-center gap-4 lg:gap-5 w-full lg:min-w-[380px] lg:w-auto transition-all hover:border-white/20 group cursor-pointer lg:mx-0">
+                  <div className="w-[70px] h-[45px] lg:w-[84px] lg:h-[54px] rounded-lg lg:rounded-xl overflow-hidden bg-black/40 shrink-0">
                     <img src={current.projectPreview} alt="Project" className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" />
                   </div>
                   <div className="flex-1 text-left min-w-0">
-                     <p className="text-[10px] font-bold text-[#2DC8E6] uppercase tracking-[0.1em] mb-1">{current.company}</p>
-                     <p className="text-[15px] font-bold text-white/90 truncate">{current.projectTitle}</p>
+                     <p className="text-[9px] lg:text-[10px] font-bold text-[#2DC8E6] uppercase tracking-[0.1em] mb-0.5 lg:mb-1">{current.company}</p>
+                     <p className="text-[13px] lg:text-[15px] font-bold text-white/90 truncate">{current.projectTitle}</p>
                   </div>
-                  <ArrowUpRight className="w-5 h-5 text-white/20 group-hover:text-white transition-all mr-2" />
+                  <ArrowUpRight className="w-4 h-4 lg:w-5 h-5 text-white/20 group-hover:text-white transition-all mr-1 lg:mr-2" />
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right Side: Navigation Buttons */}
-          <div className="flex flex-col gap-8 scale-90 lg:scale-100">
+          {/* Right Side: Navigation Buttons - Hidden on Mobile */}
+          <div className="hidden lg:flex flex-col gap-8">
             <button 
               onClick={prevTestimonial}
               className="w-[56px] h-[56px] rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 hover:border-white/50 transition-all group"
