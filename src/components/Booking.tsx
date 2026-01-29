@@ -88,7 +88,7 @@ const Booking = () => {
             style={{ background: 'linear-gradient(135deg, #072d36 0%, #073742 100%)' }}
           >
             {/* Desktop: Use absolute positioning to crop footer. Mobile: Use relative and tighten height to remove empty space. */}
-            <div className="relative h-[520px] md:h-[580px]">
+            <div className="relative h-[620px] md:h-[580px]">
               <div className="w-full h-full md:absolute md:top-0 md:left-0 md:h-[750px]">
                 <Cal
                   namespace="secret"
