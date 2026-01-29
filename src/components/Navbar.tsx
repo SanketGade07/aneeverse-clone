@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,6 +18,15 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Prevent scrolling when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [isMenuOpen]);
 
   return (
     <header 
@@ -36,11 +48,11 @@ export default function Navbar() {
         }`}
       >
         {/* LOGO */}
-        <div className="text-[32px] font-bw-gradual font-extrabold tracking-[-0.06em] leading-none transition-colors duration-300">
+        <div className="text-[28px] md:text-[32px] font-bw-gradual font-extrabold tracking-[-0.06em] leading-none transition-colors duration-300">
           aneeverse
         </div>
 
-        {/* NAV LINKS */}
+        {/* NAV LINKS (Desktop) */}
         <nav className="hidden md:flex items-center gap-8 text-base font-medium tracking-tight">
           <span className="flex items-center gap-1 cursor-pointer opacity-90 hover:opacity-100 transition-opacity">
             Services
@@ -62,8 +74,8 @@ export default function Navbar() {
           </span>
         </nav>
 
-        {/* CTA BUTTONS */}
-        <div className="flex items-center gap-4">
+        {/* CTA BUTTONS (Desktop) */}
+        <div className="hidden md:flex items-center gap-4">
           <button 
             className={`px-7 py-2.5 rounded-full text-[15px] font-bold transition-all duration-300 shadow-sm ${
               isScrolled 
@@ -83,25 +95,89 @@ export default function Navbar() {
           >
             Login
           </button>
+
         </div>
+
+
+        {/* MOBILE MENU TOGGLE */}
+        <button 
+          className="md:hidden p-2"
+          onClick={() => setIsMenuOpen(true)}
+        >
+          <Menu size={28} />
+        </button>
       </div>
+
+      {/* MOBILE MENU OVERLAY */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 bg-[#EBFAFE] z-[60] flex flex-col p-6"
+          >
+            {/* MOBILE NAV HEADER */}
+            <div className="flex items-center justify-between mb-12">
+              <div className="text-[28px] font-bw-gradual font-extrabold tracking-[-0.06em] leading-none text-[#073742]">
+                aneeverse
+              </div>
+              <button 
+                onClick={() => setIsMenuOpen(false)}
+                className="text-[#073742] p-2"
+              >
+                <X size={28} />
+              </button>
+            </div>
+
+            {/* MOBILE NAV LINKS */}
+            <nav className="flex flex-col gap-8 text-[18px] font-medium text-[#073742]">
+              <div className="flex items-center justify-between cursor-pointer border-b border-[#073742]/10 pb-4">
+                Services
+                <Chevron color="#073742" />
+              </div>
+              <div className="flex items-center justify-between cursor-pointer border-b border-[#073742]/10 pb-4">
+                Portfolio
+              </div>
+              <div className="flex items-center justify-between cursor-pointer border-b border-[#073742]/10 pb-4">
+                Resources
+                <Chevron color="#073742" />
+              </div>
+              <div className="flex items-center justify-between cursor-pointer border-b border-[#073742]/10 pb-4">
+                Pricing
+              </div>
+            </nav>
+
+            {/* MOBILE CTA BUTTONS */}
+            <div className="mt-auto flex flex-col gap-4 pb-8">
+              <button className="w-full bg-[#073742] text-[#EBFAFE] py-4 rounded-[20px] text-lg font-bold shadow-lg">
+                Book a Call
+              </button>
+              <button className="w-full border border-[#073742]/20 text-[#073742] py-4 rounded-[20px] text-lg font-semibold bg-white/50">
+                Sign In
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
 
 /* Chevron Icon */
-function Chevron() {
+function Chevron({ color }: { color?: string }) {
   return (
     <svg
-      width="12"
-      height="12"
+      width="16"
+      height="16"
       viewBox="0 0 24 24"
       fill="none"
       className={`transition-opacity duration-300 opacity-70 mt-[1px]`}
     >
       <path
         d="M6 9l6 6 6-6"
-        stroke="currentColor"
+        stroke={color || "currentColor"}
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -109,3 +185,4 @@ function Chevron() {
     </svg>
   );
 }
+
