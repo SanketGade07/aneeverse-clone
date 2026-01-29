@@ -49,17 +49,17 @@ const CommandCenter = () => {
         {/* Desktop View: Grid Layout */}
         <div className="hidden md:block">
           {/* Row 1: Cards 1, 2, 3 */}
-          <div className="flex flex-wrap justify-center gap-8 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
             {cards.map((card, index) => (
               <div 
                 key={index} 
-                className="group bg-[#07242e] rounded-[32px] p-8 flex flex-col items-center border border-white/5 transition-all duration-300 hover:bg-[#072d38] cursor-pointer w-[390.66px] h-[420.25px]"
+                className={`group bg-[#07242e] rounded-[32px] p-8 flex flex-col items-center border border-white/5 transition-all duration-300 hover:bg-[#072d38] cursor-pointer w-full min-h-[420px] ${index === 2 ? 'md:col-span-2 lg:col-span-1' : ''}`}
               >
                 <div className="mb-6 rounded-2xl overflow-hidden w-full flex justify-center">
                   <img 
                     src={card.image} 
                     alt={card.title} 
-                    className="w-[326.66px] h-[220px] object-contain transition-transform duration-500" 
+                    className="w-full max-w-[326px] h-[220px] object-contain transition-transform duration-500" 
                   />
                 </div>
                 <div className="mt-auto w-full text-left">
@@ -75,8 +75,8 @@ const CommandCenter = () => {
           </div>
 
           {/* Row 2: Card 4 Text and Image */}
-          <div className="flex flex-wrap justify-center gap-8">
-            <div className="bg-[#07242e] rounded-[32px] p-12 border border-white/5 transition-all duration-300 hover:bg-[#072d38] cursor-pointer text-left w-[496.33px] h-[364px] flex flex-col justify-center">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+            <div className="bg-[#07242e] rounded-[32px] p-12 border border-white/5 transition-all duration-300 hover:bg-[#072d38] cursor-pointer text-left md:col-span-1 lg:col-span-2 min-h-[364px] flex flex-col justify-center">
               <h3 className="text-white font-bw-gradual font-bold text-3xl mb-6 leading-tight">
                 4. Final files delivered,<br />manageable, sharable
               </h3>
@@ -85,12 +85,12 @@ const CommandCenter = () => {
               </p>
             </div>
 
-            <div className="bg-[#07242e] rounded-[32px] p-8 flex items-center justify-center border border-white/5 transition-all duration-300 hover:bg-[#072d38] cursor-pointer w-[707.68px] h-[364px]">
+            <div className="bg-[#07242e] rounded-[32px] p-8 flex items-center justify-center border border-white/5 transition-all duration-300 hover:bg-[#072d38] cursor-pointer md:col-span-1 lg:col-span-3 min-h-[364px]">
               <div className="w-full h-full rounded-2xl overflow-hidden flex items-center justify-center">
                 <img 
                   src={card4Img} 
                   alt="Final files delivered" 
-                  className="w-[643.67px] h-[300px] object-contain transition-transform duration-500" 
+                  className="w-full max-w-[643px] h-[300px] object-contain transition-transform duration-500" 
                 />
               </div>
             </div>
