@@ -51,7 +51,7 @@ const Booking = () => {
   }, []);
 
   return (
-    <section className="bg-[#03151a] pt-20 md:pt-24 pb-16 md:pb-20">
+    <section className="bg-[#03151a] pt-16 md:pt-24 pb-16 md:pb-20">
       <div className="max-w-[1400px] mx-auto px-0">
         <style>
           {`
@@ -72,41 +72,50 @@ const Booking = () => {
             }
           `}
         </style>
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4 font-bw-gradual tracking-tight">
-            Together, Let's Create <br className="hidden md:block" /> Something Really Incredible
+        <div className="text-center px-6 mb-10 md:mb-12">
+          <h2 className="text-[26px] md:text-4xl lg:text-5xl font-bold text-white leading-[1.2] mb-4 font-bw-gradual tracking-tight">
+            Together, Let's Create<br className="hidden md:block" /> Something Really Incredible
           </h2>
-          <p className="text-gray-400 text-base md:text-lg font-['Poppins']">
+          <p className="text-gray-400 text-[14px] md:text-lg font-['Poppins'] max-w-[320px] md:max-w-none mx-auto leading-relaxed">
             FREE 15-Min Strategy Call – For Founders Ready to Scale Fast!
           </p>
         </div>
 
-        <div 
-          className="max-w-[1300px] mx-auto rounded-[2rem] shadow-2xl pt-24 px-0 pb-0  md:pt-24 md:px-0 border border-[rgba(45,200,230,.1)] overflow-hidden"
-          style={{ background: 'linear-gradient(135deg, #072d36 0%, #073742 100%)' }}
-        >
-          {/* Calendar embed container */}
-          <div className="overflow-hidden relative" style={{ height: '580px' }}>
-            <div className="absolute left-0 w-full" style={{ top: '0', height: '750px' }}>
-              <Cal
-                namespace="secret"
-                calLink="sanket-gade-r6mxkt/secret"
-                style={{ width: "100%", height: "100%" }}
-                config={{ 
-                    layout: "month_view", 
-                    useSlotsViewOnSmallScreen: "true",
-                    theme: "dark"
-                }}
-              />
+        {/* Unified Responsive Calendar Container */}
+        <div className="px-4 md:px-0">
+          <div 
+            className="max-w-[1300px] mx-auto rounded-[2rem] shadow-2xl border border-[rgba(45,200,230,.1)] overflow-hidden pt-0 md:pt-24"
+            style={{ background: 'linear-gradient(135deg, #072d36 0%, #073742 100%)' }}
+          >
+            {/* Desktop: Use absolute positioning to crop footer. Mobile: Use relative and tighten height to remove empty space. */}
+            <div className="relative h-[520px] md:h-[580px]">
+              <div className="w-full h-full md:absolute md:top-0 md:left-0 md:h-[750px]">
+                <Cal
+                  namespace="secret"
+                  calLink="sanket-gade-r6mxkt/secret"
+                  style={{ width: "100%", height: "100%" }}
+                  config={{ 
+                      layout: "month_view", 
+                      useSlotsViewOnSmallScreen: "true",
+                      theme: "dark"
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="mt-4 text-center pb-8">
+
+        <div className="text-center hidden md:block mt-12">
             <p className="text-white/20 text-[10px] tracking-[0.2em] uppercase font-medium">
                 Powered by Cal.com
             </p>
         </div>
+
+
+
+
+
       </div>
     </section>
   );
