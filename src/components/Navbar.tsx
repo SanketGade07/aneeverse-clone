@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Menu, X, ArrowUpRight, Sparkles, ShoppingBag, Globe, PenTool, Monitor, Search, BarChart3, Mail, Rocket, FileText, Code, Layout, Cpu, LineChart, PieChart, ChevronRight, Users, PlayCircle, BookOpen } from "lucide-react";
+import { Menu, X, ArrowUpRight, Sparkles, ShoppingBag, Globe, PenTool, Monitor, Search, BarChart3, Rocket, FileText, Code, Layout, Cpu, PieChart, ChevronRight, Users, PlayCircle, BookOpen } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import bharathakshaImg from "../assets/our-works/bharathaksha.avif";
 import jmvisaImg from "../assets/our-works/jmvisa.avif";
@@ -9,12 +9,7 @@ import blogImg1 from "../assets/blog/Agency-vs-Freelancer-vs-In-House-1.avif";
 import blogImg2 from "../assets/blog/How-to-Use-n8n-to-Collect-LinkedIn-Leads-1.avif";
 import boomiImg from "../assets/our-works/boomi.avif";
 
-const resourcesData = [
-  { title: "Blog", desc: "Latest articles and insights", icon: FileText },
-  { title: "Customer Stories", desc: "Success stories from our clients", icon: Users },
-  { title: "Guides & Quizzes", desc: "Insights from marketing leaders", icon: BookOpen },
-  { title: "Video Library", desc: "Aneeverse's latest videos", icon: PlayCircle }
-];
+
 
 const servicesData = [
   {
