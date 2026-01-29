@@ -63,7 +63,8 @@ const OurWorks = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12">
+        {/* Desktop View: Grid Layout */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-12">
           {works.map((work, index) => (
             <div key={index} className={`group cursor-pointer ${work.colSpan}`}>
               <div className="relative h-[350px] rounded-2xl overflow-hidden mb-6 bg-white/5">
@@ -84,6 +85,35 @@ const OurWorks = () => {
             </div>
           ))}
         </div>
+
+        {/* Mobile View: Horizontal Scroll */}
+        <div className="md:hidden">
+          <div className="flex overflow-x-auto snap-x snap-mandatory no-scrollbar -mx-6 px-6 gap-6 scroll-smooth">
+            {works.map((work, index) => (
+              <div 
+                key={index} 
+                className="flex-shrink-0 w-[300px] snap-center group cursor-pointer"
+              >
+                <div className="relative h-[380px] rounded-2xl overflow-hidden mb-6 bg-white/5">
+                  <img 
+                    src={work.image} 
+                    alt={work.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="text-left">
+                  <h3 className="text-white italic text-xl font-normal mb-1 font-serif">
+                    {work.title}
+                  </h3>
+                  <p className="text-[#9CA3AF] text-sm font-sans font-normal lowercase first-letter:uppercase">
+                    {work.category}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );
